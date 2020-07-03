@@ -2,5 +2,5 @@
 
 extern "C"
 {
-    void add(const float *ptr, const int len);
+    void add(float *ptr, const int len);
 }

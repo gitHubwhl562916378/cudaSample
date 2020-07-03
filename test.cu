@@ -1,6 +1,6 @@
 #include "test.cuh"
 
-__global__ void cuda_lanch_add(const float *ptr, const int len)
+__global__ void cuda_lanch_add(float *ptr, const int len)
 {
     int index = threadIdx.x + blockIdx.x * blockDim.x;
     
@@ -8,13 +8,13 @@ __global__ void cuda_lanch_add(const float *ptr, const int len)
     for(int i = index; i < len; i = i + stride)
     {
         if(i < len){
-            // ptr[i] = 3 * 2;
+            ptr[i] = ptr[i] * 2;
         }
     }
 }
 
 
-void add(const float *ptr, const int len)
+void add(float *ptr, const int len)
 {
     dim3 blockSize(256);
     dim3 gridSize(2);
