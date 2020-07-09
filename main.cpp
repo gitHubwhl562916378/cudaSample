@@ -5,7 +5,7 @@
 
 int main(int argc, char **argv)
 {
-    std::vector<float> data{1,2,3,4,5};
+    std::vector<float> data(1 << 20, 1);
 
     float *dev_ptr;
     cudaMalloc((void**)&dev_ptr, data.size() * sizeof(float));

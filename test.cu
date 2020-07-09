@@ -17,6 +17,6 @@ __global__ void cuda_lanch_add(float *ptr, const int len)
 void add(float *ptr, const int len)
 {
     dim3 blockSize(256);
-    dim3 gridSize(2);
+    dim3 gridSize(10);
     cuda_lanch_add<<<gridSize, blockSize>>>(ptr, len);
 }
